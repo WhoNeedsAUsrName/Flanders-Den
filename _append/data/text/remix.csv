@@ -1,0 +1,4 @@
+Name,Description,Image,ImageOffset,Implemented,Rule Change,Apply On Continue
+Old Magician,All enemies get a Magic Missile.,streetmagician,-30|-60,YES,Rules.addextrascript(~if(target.spaceleft() >= 1) {giveenemyequipment(\~Magic Missile\~| false| false); }~[;] ~startcombat~);,YES
+The Warrior,Fury now disables equipment[;]| and you now start each fight with [fury]Fury[].,_warrior,-90|-20,YES,Rules.setalternate(~fury~); Rules.addplayerinnatestatus(FURY[;] 1[;] true);,YES
+Archer,Swap all [mana]Mana equipment for [bow]Charge|equipment[;] and vice versa.,_random,,YES,var database = loaddata(~diceydungeons/remixes/archerswap~); trace(database); for(eq in database) Rules.swap(eq.mana_equipment[;] eq.charge_equipment);,

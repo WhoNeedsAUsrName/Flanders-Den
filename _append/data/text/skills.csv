@@ -1,0 +1,7 @@
+Name,Description,Requirements,Script
+Vampiric Fury,Gain 2 max [heart]Hp,,self.maxhp +=2; attackself(-2);
+Vampiric Tantrum,[heal]Drain 2 HP,,drain(2);
+Dragon's Wrath,Do [fire]2 damage for each [fire]burn inflicted,,var statuseffectcount = getstatus(FIRE); if(statuseffectcount == 0) { target.textparticle(~No effect!~); } else{ attack(statuseffectcount * 2[;] FIRE); }
+Wyrmling's Wrath,Do 5 [fire] damage,,attack(5[;]FIRE);
+Very Helpful Roll,Reduce Counts by 2[;] Roll 2 Twos[;] Gain 2 [bow]charge,,givedice([2|2]); boostcountdowns(2); inflictself(~charge~[;]2); sfx(~_magic~);
+Not So Helpful Roll,Reduce Counts by 1[;] Roll a one[;] Gain 1 [bow]charge,,givedice([1]); boostcountdowns(1); inflictself(~charge~); sfx(~_magic~);

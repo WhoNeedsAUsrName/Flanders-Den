@@ -1,0 +1,9 @@
+init,rewards1,rewards2
+InitialEquipment:Spiked Shield,Equipment:Crescent Moon Blade,Equipment:Battering Ram
+InitialEquipment:Katana,Equipment:Spiked Shield,Equipment:Shield Bash
+InitialEquipment:Sword,Equipment:Polar Star,Equipment:Charge!
+InitialEquipment:Rusty Sword,Equipment:Boomerang,Equipment:Candle
+DoubleEquipment:Boxing Gloves|Boxing Gloves,Equipment:Katana,Equipment:Polar Star
+InitialEquipment:Battle Axe,,
+DoubleEquipment:Claw|Claw,,
+DoubleEquipment:Boomerang|Small Shield,,
