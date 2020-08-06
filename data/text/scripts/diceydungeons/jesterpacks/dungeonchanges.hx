@@ -55,5 +55,5 @@ if (levelupselections.indexOf("Boosterpack:Battering Ram,Front Line,Front Line")
 
 if (levelupselections.indexOf("Boosterpack:[gray]Chomp,[gray]Grumble,[gray]Grumble") > -1){ 
   Rules.substitute("Backfire", "[gray]Chomp"); 
-  Rules.substitute("Bop,Bop,Bop", rand(["Wolf's Bane,[gray]Grumble,[gray]Grumble","[gray]Grumble,[gray]Gurgle,[gray]Gurgle"])); 
+  Rules.substitute("Bop,Bop,Bop", rand(["Wolf's Bane,[gray]Grumble,[gray]Grumble","[gray]Grumble,[gray]Gurgle,[gray]Gurgle","Rotten Meats,[gray]Grumble,[gray]Grumble","[gray]Digest,[gray]Regurgitate,[gray]Digest"])); 
 }
