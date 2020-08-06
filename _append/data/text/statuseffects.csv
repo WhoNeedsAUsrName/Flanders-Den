@@ -1,3 +1,5 @@
 Name,Displayed As,Symbol,Description,Stacks?,Remove at End Turn?,Remove at Start Turn?,Invisible?,Blocked by Reduce?,Script: When inflicted,Script: On any status infliction,Script: Before Start Turn,Script: On Start Turn,Script: On any equipment use,Script: On any countdown reduce,Script: End Turn,Script: After Combat,Script: On damage inflicted,Script: On damage taken,Script: On status remove
 baller,BALLER!!!,fire,Take [fire]<value> damage on each equipment use,YES,YES,NO,NO,YES,sfx(~_fire~);,,,,attackself(status.value[;]FIRE);,,,,,,
-charge,Charge,bow,Increases by itself -1 at the end of each turn|Used by equipment to make it more powerful,YES,NO,NO,NO,NO,sfx(~_magic~);,,,,,,inflictself(~charge~[;]status.value-1);,,,,
+charge,Charge,bow,Increases by itself -2 at the end of each turn|Used by equipment to make it more powerful,YES,NO,NO,NO,NO,sfx(~_magic~);,,,,,,inflictself(~charge~[;]status.value-2);,,,,
+hunger,Hunger,vanish,Both fighters take [vanish]<value> damage at the end of your turn|Reduced by 2 at the end of your turn,YES,NO,NO,NO,YES,sfx(~_drain~);,,,,,,,,,,
+,,,,,,,,,,,,,,,peirceattack(status.value); peirceattackself(status.value); removestatusself(~hunger~[;]-2);,,,,
