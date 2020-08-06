@@ -24,14 +24,15 @@ var otherstuff = [];
 var goodotherstuff = [];
 
 var jester_dice_pool = ["Vise Grip", "Spatulasword", "Lollipop", "Table Slam", "Lollipop", "Nudge", "Spatula", "Bump", "Cauldron", "Bump"];
-var jester_damage_pool = ["Gumball Machine", "Kapow", "Boxing Gloves", "Rusty Sword", "Telephone", "Missing Score", "Elastic Heart", "Juggling Ball", "Boop", "Shovel", "Lament", "Whip", "Hammer", "Blood Suck"];
+var jester_damage_pool = ["Gumball Machine", "Kapow", "Boxing Gloves", "Rusty Sword", "Telephone", "Missing Score", "Elastic Heart", "Juggling Ball", "Boop", "Backfire", "Blood Suck"];
 
 jester_dice_pool = shuffle(jester_dice_pool);
 jester_damage_pool = shuffle(jester_damage_pool);
 
 //Floor 1:
-addfloor("tiny")
-  .additems([rand(["Gumball Machine", "Juggling Ball"])], [])
+addfloor("Normal")
+  .additems([rand(["Snoot", "Rolling Ball"])], [])
+  .additems([rand(["Wrecking Ball", "Rolling Ball"])], [])
   .generate();
   
 //Floor 2:
@@ -42,7 +43,7 @@ otherstuff = [
   health()
 ];
 goodotherstuff = [
-  shop(["Delete", "Backfire", "Delete"], [2, 3, 2]),
+  shop(["Emergency 4", "Backfire", "Delete"], [2, 2, 1]),
   upgrade()
 ];
 
@@ -56,13 +57,13 @@ items = [jester_dice_pool.pop()];
 gooditems = [];
 otherstuff = [
   health(), 
-  health()
+  shop(["Emergency 4", "Glass Salad", "Emergency 4"], [2, 2, 1]),
 ];
 goodotherstuff = [
   shop([jester_dice_pool.pop(), jester_damage_pool.pop(), "Delete"])
 ];
 
-addfloor("normal")
+addfloor("big")
   .additems(items, gooditems)
   .addotherstuff(otherstuff, goodotherstuff)
   .generate();
