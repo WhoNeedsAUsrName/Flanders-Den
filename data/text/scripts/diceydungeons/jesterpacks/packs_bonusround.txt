@@ -1,9 +1,9 @@
-Boosterpack:Hijinx,Slapsies,Slapsies
-Boosterpack:Flying Skull,Evil Laugh,Evil Laugh
+Boosterpack:Charge!,Reflect,Reflect
+Boosterpack:Charge!,Back Line,Back Line
 Boosterpack:Woof Woof Woof,Ruff Ruff Ruff,Ruff Ruff Ruff
-Boosterpack:Ice Shatter,Snowflake,Snowflake
-Boosterpack:Flame Blast,Spark,Spark
+Boosterpack:Flame Blast,Lighter,Lighter
 Boosterpack:Detonator,Liquorice,Liquorice
-Boosterpack:High Voltage,Buzzer,Buzzer
-Boosterpack:Shield Bash,Deflect,Deflect
+Boosterpack:Low Voltage,Zap,Zap
 Boosterpack:[gray]Chomp,[gray]Grumble,[gray]Grumble
+Boosterpack:Harmony,Sharpened Bone,Sharpened Bone
+Boosterpack:Resonate,Beep,Beep

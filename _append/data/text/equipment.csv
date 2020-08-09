@@ -195,18 +195,21 @@ Wolf's Bane_upgraded,[heart]Drain for your [vanish]Hunger,1,drain(getstatusself(
 Wolf's Bane_deckupgrade,[heart]Drain for your [vanish]Hunger,1,drain(getstatusself(~hunger~)); sfx(~_drain~);,,MIN2,,PINK,,complicate,,,0,NO,NO,NO,,,,,,,,,,,,,
 Wolf's Bane_weakeaned,[heart]Drain for your [vanish]Hunger,1,drain(getstatusself(~hunger~)); sfx(~_drain~);,,REQUIRE6,,PINK,,,,,0,NO,NO,NO,,,,,,,,,,,,,
 Regurgitate,Set your [vanish]Hunger to|what it was last turn,1,removestatusself(~hunger~[;]ALL); inflictself(~hunger~[;]getstatusself(~regurgitatekludge~));,,NORMAL,,PURPLE,,,,,,YES,NO,NO,,,inflictself(~regurgitatekludge~);,,,,,,,,,,
-[gray]Digest,Gain 1 [vanish]Hunger,1,inflictself(~hunger~);,,MAX4,,PURPLE,change_power,decreaserange,,,0,YES,NO,NO,,,,,,,,,,,,,
-[gray]Digest_upgraded,Gain 2 [vanish]Hunger,1,inflictself(~hunger~[;]2);,,MAX3,,PURPLE,,,,,0,YES,NO,NO,,,,,,,,,,,,,
-[gray]Grumble,Gain 1 [vanish]Hunger[][;]|[heal]Heal for your [vanish]Hunger,2,inflictself(~hunger~); attackself(-getstatusself(~hunger~)); sfx(~_drain~);,,MIN3,,PINK,increaserange,complicate,,,,YES,NO,NO,,,,,,,,,,,,,
+[gray]Digest,Gain 1 [vanish]Hunger,1,inflictself(~hunger~);,,COUNTDOWN,2,PURPLE,change_power,decreaserange,,,0,YES,NO,NO,,,,,,,,,,,,,
+[gray]Digest_upgraded,Gain 2 [vanish]Hunger,1,inflictself(~hunger~[;]2);,,COUNTDOWN,2,PURPLE,,,,,0,YES,NO,NO,,,,,,,,,,,,,
+[gray]Grumble,Gain 1 [vanish]Hunger[][;]|[heal]Heal for your [vanish]Hunger,2,inflictself(~hunger~); attackself(-getstatusself(~hunger~)); sfx(~_drain~);,,COUNTDOWN,3,PINK,change_power,complicate,,,,YES,NO,NO,,,,,,,,,,,,,
+[gray]Grumble_upgraded,Gain 2 [vanish]Hunger[][;]|[heal]Heal for your [vanish]Hunger,2,inflictself(~hunger~[;]2); attackself(-getstatusself(~hunger~)); sfx(~_drain~);,,COUNTDOWN,3,PINK,,,,,,YES,NO,NO,,,,,,,,,,,,,
+[gray]Grumble_downgraded,Gain 1 [vanish]Hunger[],2,inflictself(~hunger~); sfx(~_drain~);,,COUNTDOWN,3,PINK,,,,,,YES,NO,NO,,,,,,,,,,,,,
 [gray]Growl,Gain 8 [vanish]Hunger,2,inflictself(~hunger~[;]8);,,COUNTDOWN,12,ORANGE,halfcountdown,noeffect,,,,YES,NO,NO,,finale,,,,,,,,,,,
-[gray]Chomp,Spend 2 [vanish]Hunger to|[heart]Drain 3,2,if(getstatusself(~hunger~) <= 1) { self.textparticle(~No effect!~); } else { drain(3); removestatusself(~hunger~| 2); sfx(~_drain~); },,MIN2,,RED,increaserange,complicate,,,,NO,NO,NO,,,,,,,,,,,,,
+[gray]Chomp,Spend 2 [vanish]Hunger to|[heart]Drain 3,2,if(getstatusself(~hunger~) <= 1) { self.textparticle(~No effect!~); } else { drain(3); removestatusself(~hunger~| 2); sfx(~_drain~); },,NORMAL,,RED,change_power,complicate,,,,NO,NO,NO,,,,,,,,,,,,,
+[gray]Chomp_upgraded,Spend 2 [vanish]Hunger to|[heart]Drain 3[;] Return the dice,2,if(getstatusself(~hunger~) <= 1) { self.textparticle(~No effect!~); } else { drain(3); removestatusself(~hunger~| 2); sfx(~_drain~); } givedice(d);,,NORMAL,,RED,change_power,complicate,,,,NO,NO,NO,,,,,,,,,,,,,
 [gray]Gurgle,Gain 1 [vanish]Hunger|Return the dice,1,inflictself(~hunger~);givedice(d);,,MAX3,,PURPLE,increaserange,decreaserange,,,,YES,NO,NO,,,,,,,,,,,,,
-Smack,Do [sword]3 Damage[;]|Lower counts by 1,2,boostcountdowns(1); attack(3); sfxdamage(target[;]3);,,COUNTDOWN,3,YELLOW,change_power,change_power,,,,NO,NO,NO,,,,,,,,,,,,,Boostcountdowns(1); 
-Smack_upgraded,Do [sword]3 Damage[;]|Lower counts by 2,2,boostcountdowns(2); attack(3);sfxdamage(target[;]3);,,COUNTDOWN,3,YELLOW,,,,,,NO,NO,NO,,,,,,,,,,,,,Boostcountdowns(2); 
-Smack_downgraded,Do [sword]3 Damage,2,attack(3); sfxdamage(target[;]3);,,COUNTDOWN,3,YELLOW,,,,,,NO,NO,NO,,,,,,,,,,,,,Boostcountdowns(1); 
-Slap,Do [sword]3 Damage[;]|Lower counts by 2,2,boostcountdowns(2); attack(2); sfxdamage(target[;]2);,,COUNTDOWN,5,RED,change_power,change_power,,,,NO,NO,NO,,,,,,,,,,,,,Boostcountdowns(2); 
-Slap_upgraded,Do [sword]2 Damage[;]|Lower counts by 3,2,boostcountdowns(3); attack(2); sfxdamage(target[;]2);,,COUNTDOWN,5,RED,,,,,,NO,NO,NO,,,,,,,,,,,,,boostcountdowns(3); 
-Slap_downgraded,Do [sword]3 Damage[;]|Lower counts by 1,2,Boostcountdowns(1); attack(2); sfxdamage(target[;]2);,,COUNTDOWN,5,RED,,,,,,NO,NO,NO,,,,,,,,,,,,,Boostcountdowns(2); 
+Smack,Do [sword]2 Damage[;]|Lower counts by 1,2,boostcountdowns(1); attack(2); sfxdamage(target[;]3);,,COUNTDOWN,2,YELLOW,change_power,change_power,,,,NO,NO,NO,,,,,,,,,,,,,Boostcountdowns(1); 
+Smack_upgraded,Do [sword]2 Damage[;]|Lower counts by 2,2,boostcountdowns(2); attack(2);sfxdamage(target[;]3);,,COUNTDOWN,2,YELLOW,,,,,,NO,NO,NO,,,,,,,,,,,,,Boostcountdowns(2); 
+Smack_downgraded,Do [sword]2 Damage,2,attack(2); sfxdamage(target[;]3);,,COUNTDOWN,2,YELLOW,,,,,,NO,NO,NO,,,,,,,,,,,,,Boostcountdowns(1); 
+Slap,Do [sword]1 Damage[;]|Lower counts by 2,2,boostcountdowns(2); attack(1); sfxdamage(target[;]2);,,COUNTDOWN,4,RED,change_power,change_power,,,,NO,NO,NO,,,,,,,,,,,,,Boostcountdowns(2); 
+Slap_upgraded,Do [sword]1 Damage[;]|Lower counts by 3,2,boostcountdowns(3); attack(1); sfxdamage(target[;]2);,,COUNTDOWN,4,RED,,,,,,NO,NO,NO,,,,,,,,,,,,,boostcountdowns(3); 
+Slap_downgraded,Do [sword]1 Damage[;]|Lower counts by 1,2,Boostcountdowns(1); attack(1); sfxdamage(target[;]2);,,COUNTDOWN,4,RED,,,,,,NO,NO,NO,,,,,,,,,,,,,Boostcountdowns(2); 
 Meats,Lower counts by 2[;]|Heal [heal]1,2,boostcountdowns(2); attackself(-1); sfx(~_heal~);,,NORMAL,,RED,change_power,complicate,,,,YES,NO,NO,,,,,,,,,,,,,
 Meats_upgraded,Lower counts by 3[;]|Heal [heal]1,2,boostcountdowns(3); attackself(-1); sfx(~_heal~);,,NORMAL,,RED,,,,,,YES,NO,NO,,,,,,,,,,,,,
 Rolling Ball,Do [sword]3 Damage[;]|Roll a new dice,1,attack(3); givedice();,,COUNTDOWN,4,RED,change_power,change_power,,,,NO,NO,NO,,,,,,,,,,,,,
@@ -215,3 +218,28 @@ Rolling Ball_downgraded,Do [sword]2 Damage[;]|Roll a new dice,1,attack(2); gived
 Rotten Meats,Double your [vanish]Hunger,1,inflictself(~hunger~[;]getstatusself(~hunger~));,,MIN4,,GREEN,increaserange,complicate,,,,YES,NO,NO,,,,,,,,,,,,,
 Vibe Grip,Combine both dice[;]|flip[;] and duplicate results,2,givedice([7-d[;]7-d]);,,MAX3|MAX3,,GREEN,change_power,decreaserange,,,,YES,NO,NO,,,,,,,,,,,,,
 Vibe Grip_upgraded,Combine both dice[;]|flip[;] and triplicate results,2,givedice([7-d[;]7-d[;]7-d]);,,MAX3|MAX3,,GREEN,,,,,,YES,NO,NO,,,,,,,,,,,,,
+Countdown,Whenever an equipment is used|Reduce all counts by [clock]1|[gray](after using this),1,inflictself(~countdown~);,,ODD,,RED,change_power,complicate,,,,YES,NO,NO,,,,,,,,,,,,,
+Countdown_upgraded,Whenever an equipment is used|Reduce all counts by [clock]2|[gray](after using this),1,inflictself(~countdown~[;]2);,,ODD,,RED,,,,,,YES,NO,NO,,,,,,,,,,,,,
+Clockpicks,Split Dice[;] Gain [clock]1 ,1,givedice(split(d)[;] ~splitdice~);,,MIN3,,RED,increaserange,complicate,,,,YES,NO,NO,,,,,,,,,,,,,
+Recurrence,Gain 1[clock][;] and 1[recycle],2,inflictself(~countdown~); inflictself(REEQUIPNEXT);,,COUNTDOWN,3,PURPLE,change_power,noeffect,,,,YES,NO,NO,,,,,,,,,,,,,
+Recurrence_upgraded,Gain 2[clock][;] and 2[recycle],2,inflictself(~countdown~[;]2); inflictself(REEQUIPNEXT[;]2);,,COUNTDOWN,3,PURPLE,,,,,,YES,NO,NO,,,,,,,,,,,,,
+Stave,Do [sword]6 damage,2,attack(6); sfxdamage(target[;]6);,,COUNTDOWN,5,RED,change_power,noeffect,,,,NO,NO,NO,,,,,,,,,,,,,
+Stave_upgraded,Do [sword]7 damage,2,attack(7); sfxdamage(target[;]7);,,COUNTDOWN,5,RED,,,,,,NO,NO,NO,,,,,,,,,,,,,
+Jackhammer,Do 6 damage[;]|[shock]Shocks the enemy,2,attack(6| SHOCK); inflict(SHOCK); sfxdamage(target[;]6);,,COUNTDOWN,8,YELLOW,change_power,change_power,,,,NO,NO,NO,,,,,,,,,,,,,
+Jackhammer_downgraded,Do 4 damage[;]|[shock]Shocks the enemy,2,attack(4| SHOCK); inflict(SHOCK); sfxdamage(target[;]4);,,COUNTDOWN,8,YELLOW,,,,,,NO,NO,NO,,,,,,,,,,,,,
+Jackhammer_upgraded,Do 8 damage[;]|[shock]Shocks the enemy,2,attack(8| SHOCK); inflict(SHOCK); sfxdamage(target[;]8);,,COUNTDOWN,8,YELLOW,,,,,,NO,NO,NO,,,,,,,,,,,,,
+Low Voltage,Do 4 damage[;]|Roll a dice if the enemy is shocked,2,if(getstatus(SHOCK) > 0) { givedice(); } attack((4) | SHOCK);,,COUNTDOWN,5,YELLOW,change_power,noeffect,,,,NO,NO,NO,,,,,,,,,,,,,
+Low Voltage_upgraded,Do 5 damage[;]|Roll a dice if the enemy is shocked,2,if(getstatus(SHOCK) > 0) { givedice(); } attack((5) | SHOCK);,,COUNTDOWN,5,YELLOW,,,,,,NO,NO,NO,,,,,,,,,,,,,
+Zap,[shock]Shock the enemy,1,inflict(SHOCK);,,COUNTDOWN,2,YELLOW,halfcountdown,noeffect,,,,NO,NO,NO,,,,,,,,,,,,,
+Reflect,Gain 2 [shield]Shield,1,inflictself(SHIELD[;]2);,,COUNTDOWN,2,ORANGE,halfcountdown,noeffect,,,,YES,NO,NO,,,,,,,,,,,,,
+Ice Hard,Inflict 1 [ice]Freeze,1,inflict(ICE);,,COUNTDOWN,2,CYAN,halfcountdown,noeffect,,,,NO,NO,NO,,,,,,,,,,,,,
+Beep,Inflict 1 [weaken]Weaken,1,inflict(WEAKEN); sfx(~_applyweaken~);,,COUNTDOWN,2,ORANGE,halfcountdown,noeffect,,,,NO,NO,NO,,,,,,,,,,,,,
+Resonate,Do [weaken]3 damage[;]|+[weaken]2 if enemy is weak,2,if(getstatus(WEAKEN) > 0) { attack((5) | WEAKEN); } else { attack((3) | WEAKEN); },Scream,COUNTDOWN,5,ORANGE,change_power,change_power,,,0,NO,NO,NO,,,,,,,,,,,,,
+Resonate_upgraded,Do [weaken]3 damage[;]|+[weaken]4 if enemy is weak,2,if(getstatus(WEAKEN) > 0) { attack((7) | WEAKEN); } else { attack((3) | WEAKEN); } ,Scream,COUNTDOWN,5,ORANGE,,,,,0,NO,NO,NO,,,,,,,,,,,,,
+Resonate_downgraded,Do [weaken]1 damage[;]|+[weaken]2 if enemy is weak,2,if(getstatus(WEAKEN) > 0) { attack((3) | WEAKEN); } else { attack((1) | WEAKEN); },Scream,COUNTDOWN,5,ORANGE,,,,,0,NO,NO,NO,,,,,,,,,,,,,
+Sharpened Bone,Inflict 1 [weaken]Weaken[;]| Do [weaken]3 damage,1,attack(3 | WEAKEN); inflict(WEAKEN); sfx(~_applyweaken~);,,COUNTDOWN,5,ORANGE,change_power,change_power,,,,NO,NO,NO,,,,,,,,,,,,,
+Sharpened Bone_downgraded,Inflict 1 [weaken]Weaken[;]| Do [weaken]2 damage,1,attack(2 | WEAKEN); inflict(WEAKEN); sfx(~_applyweaken~);,,COUNTDOWN,5,ORANGE,,,,,,NO,NO,NO,,,,,,,,,,,,,
+Sharpened Bone_upgraded,Inflict 1 [weaken]Weaken[;]| Do [weaken]4 damage,1,attack(4 | WEAKEN); inflict(WEAKEN); sfx(~_applyweaken~);,,COUNTDOWN,5,ORANGE,,,,,,NO,NO,NO,,,,,,,,,,,,,
+Backing Track,Roll a dice for every|[weaken]1 weaken on enemy,1,var numweaken = getstatus(WEAKEN); if(numweaken > 0) { var returndice = []; for(i in 0 ... numweaken) { returndice.push(rand([1|2|3|4|5|6])); } givedice(returndice); },,COUNTDOWN,6,ORANGE,halfcountdown,noeffect,,,0,YES,NO,NO,,,,,,,,,,,,,
+Back Line,Lose [heart]3 health[;]|gain[shield]3 shield[;]|reduce counts by 4,2,pierceattackself(3); inflictself(SHIELD| 3); boostcountdowns(4),,COUNTDOWN,4,ORANGE,change_power,noeffect,,,0,YES,NO,NO,,,,,,,,,,,,,
+Back Line_upgraded,Lose [heart]6 health[;]|gain[shield]6 shield[;]|reduce counts by 4,2,pierceattackself(6); inflictself(SHIELD| 6); boostcountdowns(4),,COUNTDOWN,4,ORANGE,,,,,0,YES,NO,NO,,,,,,,,,,,,,

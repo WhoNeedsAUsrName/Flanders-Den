@@ -3,3 +3,4 @@ baller,BALLER!!!,fire,Take [fire]<value> damage on each equipment use,YES,YES,NO
 charge,Charge,bow,Increases by itself -2 at the end of each turn|Used by equipment to make it more powerful,YES,NO,NO,NO,NO,sfx(~_magic~);,,,,,,inflictself(~charge~[;]status.value-2);,,,,
 hunger,Hunger,vanish,Both fighters take [vanish]<value> damage at the end of your turn|Reduced by 1 at the end of your turn,YES,NO,NO,NO,YES,sfx(~_drain~);,,,,,,attack(status.value); attackself(status.value); removestatusself(~hunger~[;]1);,,,,
 regurgitatekludge,regurgitatekludge,vanish,A kludgey status for regurgitate[;] shouldn't be seen normally,YES,NO,NO,YES,NO,,,,,,,removestatusself(~regurgitatekludge~[;]status.value-1); inflictself(~regurgitatekludge~[;]getstatusself(~hunger~)-1);,,,,
+countdown,Reduce_Counts_By,clock,Whenever an equipment is used[;]|Reduce all counts by <value>,YES,YES,NO,NO,NO,sfx(~openchest~);,,,,boostcountdowns(status.value); sfx(~enteranvil~);,,,,,,
