@@ -76,7 +76,7 @@ Explosive Antidote,Do [sword]2 per [poison] on the enemy|Cure ALL their [poison]
 Explosive Antidote_upgraded,Do [sword]2 per [poison] on the enemy|Cure ALL their [poison]Poison,1,attack(getstatus(POISON) * 2); removestatus(POISON[;]ALL);,,EVEN,,PURPLE,,,,,0,NO,NO,NO,,,,,,,,,,,,,removestatus(POISON[;]ALL);
 Explosive Antidote_downgraded,Do [sword]1 per [poison] on the enemy|Cure ALL their [poison]Poison,1,attack(getstatus(POISON)); removestatus(POISON[;]ALL);,,DOUBLES|DOUBLES,,PURPLE,,,,,0,NO,NO,NO,,,,,,,,,,,,,removestatus(POISON[;]ALL);
 Crow's Wall,Reduce countdowns by <d6>|[gray](Reuseable),1,boostcountdowns(d); boostcountdowns(d);,,DOUBLES|DOUBLES,,GREEN,change_power,removereusable,,,-1,NO,NO,NO,,,,,,,,,,,,,
-Crow's Wall_upgraded,Reduce countdowns by <d6>|[gray](Reuseable),1,boostcountdowns(d);,,NORMAL|NORMAL,6,GREEN,,,,,0,NO,NO,NO,,,,,,,,,,,,,
+Crow's Wall_upgraded,Reduce countdowns by <d6>|[gray](Reuseable),1,boostcountdowns(d);,,NORMAL|NORMAL,6,GREEN,,,,,-1,NO,NO,NO,,,,,,,,,,,,,
 Rexing Fall,Take [sword]4[;] Boost counts by 6|[gray](Reuseable),1,boostcountdowns(6); attackself(4);,,REQUIRE1,,RED,reuseable,removereusable,,,2,YES,NO,NO,,,,,,,,,,,,,
 Mirror's Edge,Do [sword]2[;] +1 dice this fight|[gray](Reuseable),1,if(simulation) { bonus(1000); } else{ attack(2); self.extradice++; },,REQUIRE6|EVEN,,PURPLE,change_power,complicate,,,2,NO,NO,NO,,,,,,,,,,,,,
 Mirror's Edge_upgraded,Do [sword] 2[;] +1 dice this fight|[gray](Reuseable),1,if(simulation) { bonus(1000); } else{ attack(2); self.extradice++; },,REQUIRE6|NORMAL,,PURPLE,,,,,2,NO,NO,NO,,,,,,,,,,,,,
